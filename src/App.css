@@ -366,3 +366,17 @@ position: fixed;
 }
 
 /* .login-container end */
+
+.order-section input{
+  height: 45px;
+  border: 1px solid var(--primary-color);
+}
+.order-section select{
+  height: 45px;
+  border: 1px solid var(--primary-color);
+}
+
+.customer-section input{
+  height: 45px;
+  border: 1px solid var(--primary-color);
+}
