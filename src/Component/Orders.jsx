@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import DataTable from 'react-data-table-component';
-import { FaEye } from 'react-icons/fa'; // Importing View icon
+import { FaEye } from 'react-icons/fa'; 
+import DatePicker from "react-datepicker"; 
+import "react-datepicker/dist/react-datepicker.css";
 
 export default function Orders() {
   const [orders, setOrders] = useState([
@@ -17,11 +19,33 @@ export default function Orders() {
     { invoiceNo: 'INV011', orderTime: '2024-12-11 02:00 PM', customerName: 'Daniel Lee', amount: '$500', status: 'Pending' },
     { invoiceNo: 'INV012', orderTime: '2024-12-12 04:15 PM', customerName: 'Mia King', amount: '$275', status: 'Delivered' },
   ]);
+
+  const [filterName, setFilterName] = useState('');
+  const [filterStatus, setFilterStatus] = useState('');
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
+
+  // Declare isWithinDateRange before it's used
+  const isWithinDateRange = (orderTime) => {
+    const orderDate = new Date(orderTime);
+    const startDateValid = startDate ? orderDate >= startDate : true;
+    const endDateValid = endDate ? orderDate <= endDate : true;
+    return startDateValid && endDateValid;
+  };
+
   const handleStatusChange = (invoiceNo, newStatus) => {
     setOrders(orders.map(order => 
       order.invoiceNo === invoiceNo ? { ...order, status: newStatus } : order
     ));
   };
+
+  const filteredOrders = orders.filter(order => {
+    return (
+      (filterName ? order.customerName.toLowerCase().includes(filterName.toLowerCase()) : true) &&
+      (filterStatus ? order.status === filterStatus : true) &&
+      (isWithinDateRange(order.orderTime)) // Use the function here
+    );
+  });
 
   const columns = [
     {
@@ -49,11 +73,7 @@ export default function Orders() {
       selector: (row) => row.status,
       sortable: true,
       cell: (row) => {
-        // Apply styles based on status
-        let statusStyle = {
-          fontWeight: 'bold', // Make the status bold
-        };
-        
+        let statusStyle = { fontWeight: 'bold' };
         if (row.status === 'Delivered') {
           statusStyle = { ...statusStyle, color: 'green' };
         } else if (row.status === 'Cancelled') {
@@ -65,7 +85,6 @@ export default function Orders() {
         return <div style={statusStyle}>{row.status}</div>;
       },
     },
-    
     {
       name: 'Action',
       cell: (row) => (
@@ -95,7 +114,6 @@ export default function Orders() {
       button: true,
     },
   ];
-  
 
   const customStyles = {
     headCells: {
@@ -117,10 +135,57 @@ export default function Orders() {
     <div className="container mt-4">
       <h4 className="mb-4">Orders</h4>
 
+      {/* Filter Inputs */}
+      <div className="row mb-4">
+        <div className="col-md-4">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Filter by Name"
+            value={filterName}
+            onChange={(e) => setFilterName(e.target.value)}
+          />
+        </div>
+        <div className="col-md-4">
+          <select
+            className="form-control"
+            value={filterStatus}
+            onChange={(e) => setFilterStatus(e.target.value)}
+          >
+            <option value="">Filter by Status</option>
+            <option value="Pending">Pending</option>
+            <option value="Delivered">Delivered</option>
+            <option value="Cancelled">Cancelled</option>
+          </select>
+        </div>
+        <div className="col-md-4">
+          <div className="d-flex">
+            <div className="mr-2">
+              <DatePicker
+                selected={startDate}
+                onChange={(date) => setStartDate(date)}
+                placeholderText="Start Date"
+                dateFormat="yyyy-MM-dd"
+                className="form-control"
+              />
+            </div>
+            <div>
+              <DatePicker
+                selected={endDate}
+                onChange={(date) => setEndDate(date)}
+                placeholderText="End Date"
+                dateFormat="yyyy-MM-dd"
+                className="form-control"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* DataTable */}
       <DataTable
         columns={columns}
-        data={orders}
+        data={filteredOrders}
         pagination
         highlightOnHover
         striped

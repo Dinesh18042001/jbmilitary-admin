@@ -8,19 +8,21 @@ import Customer from './Component/Customer';
 import Categories from './Component/Categories';
 import Login from './Component/Login/Login';
 
-
 function App() {
   return (
     <Router>
       <Routes>
+        {/* Login Route Without Layout */}
+        <Route path="/login" element={<Login />} />
+
         {/* Base Layout with nested routes */}
         <Route path="/" element={<Layout />}>
           <Route index element={<Dashboard />} />
+          <Route path="dashboard" element={<Dashboard />} />
           <Route path="products" element={<Products />} />
-          <Route path="orders" element={<Orders/>} />
-          <Route path="customer" element={<Customer/>} />
-          <Route path="categories" element={<Categories/>} />
-          <Route path="login" element={<Login/>} />
+          <Route path="orders" element={<Orders />} />
+          <Route path="customer" element={<Customer />} />
+          <Route path="categories" element={<Categories />} />
         </Route>
       </Routes>
     </Router>
@@ -28,3 +30,6 @@ function App() {
 }
 
 export default App;
+
+
+
