@@ -6,7 +6,7 @@ import Products from './Component/Products';
 import Orders from './Component/Orders';
 import Customer from './Component/Customer';
 import Categories from './Component/Categories';
-import Login from './Component/Login/Login';
+import Login from './Component/Login/login';
 
 function App() {
   return (

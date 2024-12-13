@@ -225,7 +225,7 @@ export default function Orders() {
           </div>
           <div className="col-md-4">
             <select
-              className="form-control"
+              className="form-control select-box"
               value={filterStatus}
               onChange={(e) => setFilterStatus(e.target.value)}
             >

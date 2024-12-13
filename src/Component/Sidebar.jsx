@@ -9,6 +9,7 @@ export default function Sidebar() {
     { icon: "assets/icon/oders.png", text: "Orders", path: "orders" },
     { icon: "assets/icon/users.png", text: "Customer", path: "customer" },
     { icon: "assets/icon/menu.png", text: "Categories", path: "categories" },
+    { icon: "assets/icon/menu.png", text: "Sub Categories", path: "categories" },
   ];
 
   return (
@@ -22,7 +23,7 @@ export default function Sidebar() {
 
         {/* Sidebar Links */}
         {sidebarLinks.map((link, index) => (
-          <div className="sidebar-link ms-3 mt-5" key={index}>
+          <div className="sidebar-link ms-3" key={index}>
             <Link
               to={link.path}
               className="text-decoration-none text-white"
