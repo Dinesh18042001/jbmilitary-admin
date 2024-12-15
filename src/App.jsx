@@ -7,6 +7,7 @@ import Orders from './Component/Orders';
 import Customer from './Component/Customer';
 import Categories from './Component/Categories';
 import Login from './Component/Login/login';
+import SubCategories from './Component/SubCategories';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="orders" element={<Orders />} />
           <Route path="customer" element={<Customer />} />
           <Route path="categories" element={<Categories />} />
+          <Route path="sub-categories" element={<SubCategories/>} />
         </Route>
       </Routes>
     </Router>

@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 export default function Sidebar() {
   // Sidebar links data
   const sidebarLinks = [
-    { icon: "assets/icon/dashboards.png", text: "Dashboard", path: "/" },
-    { icon: "assets/icon/productes.png", text: "Products", path: "products" },
-    { icon: "assets/icon/oders.png", text: "Orders", path: "orders" },
-    { icon: "assets/icon/users.png", text: "Customer", path: "customer" },
-    { icon: "assets/icon/menu.png", text: "Categories", path: "categories" },
-    { icon: "assets/icon/menu.png", text: "Sub Categories", path: "categories" },
+    { icon: "assets/sidebar-icon/menu.png", text: "Dashboard", path: "/" },
+    { icon: "assets/sidebar-icon/documents.png", text: "Products", path: "products" },
+    { icon: "assets/sidebar-icon/order.png", text: "Orders", path: "orders" },
+    { icon: "assets/sidebar-icon/man-avatar.png", text: "Customer", path: "customer" },
+    { icon: "assets/sidebar-icon/menu .png", text: "Categories", path: "categories" },
+    { icon: "assets/sidebar-icon/classification.png", text: "Sub Categories", path: "sub-categories" },
   ];
 
   return (

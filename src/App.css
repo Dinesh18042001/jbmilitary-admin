@@ -434,3 +434,47 @@ input:checked + .slider {
 input:checked + .slider:before {
   transform: translateX(14px);
 }
+
+/* .categories-section start */
+.categories-section h4{
+ font-weight: 500;
+ font-size: 30px !important;
+}
+.categories-section input{
+  height: 45px;
+  border: 1px solid var(--primary-color);
+}
+
+.categories-section .categories-btn button {
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  transition: all 0.3s;
+  height: 45px;
+}
+.categories-section .categories-btn button:hover{
+  background-color: #218838;
+  transform: scale(1.05);
+}
+/* .categories-section end */
+
+/* subcategories-section start */
+.subcategories-section h4{
+  font-weight: 500;
+  font-size: 30px !important;
+}
+.subcategories-section input{
+  height: 45px;
+  border: 1px solid var(--primary-color);
+}
+
+.subcategories-section .subcategories-btn button {
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  transition: all 0.3s;
+  height: 45px;
+}
+.subcategories-section .subcategories-btn button:hover{
+  background-color: #218838;
+  transform: scale(1.05);
+}
+/* subcategories-section end */
