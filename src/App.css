@@ -134,9 +134,19 @@ body {
   border-radius: 10px;
   font-size: 24px;
 }
-.menu-link i{
+.menu-link i {
   color: #fff;
 }
+
+@media (min-width: 991px) {
+  .menu-link i {
+    display: none;
+  }
+}
+
+
+
+
 
 .sidebar-section {
 position: fixed;
@@ -164,6 +174,7 @@ position: fixed;
   background-color: #f1f1f1; 
   border-radius: 10px; 
 }
+
 
 .sidebar-link a{
   text-decoration: none;
@@ -445,11 +456,10 @@ input:checked + .slider:before {
   border: 1px solid var(--primary-color);
 }
 
-.categories-section .categories-btn button {
+.categories-section .categories-btn a{
   background: var(--primary-color);
   border: 1px solid var(--primary-color);
   transition: all 0.3s;
-  height: 45px;
 }
 .categories-section .categories-btn button:hover{
   background-color: #218838;
@@ -467,14 +477,188 @@ input:checked + .slider:before {
   border: 1px solid var(--primary-color);
 }
 
-.subcategories-section .subcategories-btn button {
+.subcategories-section .subcategories-btn a {
   background: var(--primary-color);
   border: 1px solid var(--primary-color);
   transition: all 0.3s;
-  height: 45px;
 }
-.subcategories-section .subcategories-btn button:hover{
+.subcategories-section .subcategories-btn a:hover{
   background-color: #218838;
   transform: scale(1.05);
 }
 /* subcategories-section end */
+
+
+
+
+/* Offcanvas-section start */
+.offcanvas-section .offcanvas {
+  width: 250px; /* Set the width of the offcanvas */
+  background-color: #333; /* Dark background for the sidebar */
+  color: white; /* White text color */
+  padding: 15px 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Logo section in Offcanvas */
+.offcanvas-section .offcanvas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.offcanvas-section .offcanvas-header img {
+  max-width: 150px; /* Logo width */
+}
+
+.offcanvas-section .offcanvas-header .btn-close {
+  color: #fff; /* White close button */
+}
+
+/* Sidebar Links Container */
+.offcanvas-section .sidebar-links {
+  margin-top: 20px;
+}
+
+/* Individual Sidebar Links */
+
+.offcanvas-section .sidebar-link {
+  margin-bottom: 20px;
+}
+
+.offcanvas-section .sidebar-link a {
+  color: white; 
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  border-radius: 5px; 
+}
+
+.offcanvas-section .sidebar-link a:hover {
+  background-color: #444;
+}
+
+.offcanvas-section .sidebar-link img {
+  width: 20px; 
+  height: 20px;
+}
+
+.offcanvas-section .sidebar-link p {
+  margin-left: 10px; 
+}
+
+.offcanvas-section .sidebar-link i {
+  font-size: 18px; 
+  margin-left: auto;
+}
+
+
+@media (max-width: 991px) {
+
+  .offcanvas {
+    width: 100%; 
+    height: 100%;
+    padding-top: 20px; 
+  }
+
+  .offcanvas-section .offcanvas-header {
+    justify-content: center;
+  }
+
+  .offcanvas-section .offcanvas-header img {
+    max-width: 120px;
+  }
+
+  
+  .offcanvas-section .sidebar-link a {
+    font-size: 14px;
+    padding: 8px;
+    color: #fff !important;
+  }
+
+  .offcanvas-section .sidebar-link img {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.offcanvas-section .offcanvas-backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.offcanvas-section .offcanvas.show {
+  transform: translateX(0); 
+}
+
+.offcanvas-section .offcanvas.hide {
+  transform: translateX(100%); 
+}
+
+/* Offcanvas-section end */
+
+
+/* product-add page start */
+.add-product-section input{
+  height: 45px;
+  border: 1px solid var(--primary-color);
+}
+.add-product-section select{
+  height: 45px;
+  border: 1px solid var(--primary-color);
+}
+.add-product-section textarea{
+  height: 45px;
+  border: 1px solid var(--primary-color);
+}
+.product-add-btn{
+  height: 45px;
+}
+
+/* Add this to your CSS file */
+.error{
+  color: red !important;
+  font-size: 0.875rem; 
+  margin-top: 5px;
+}
+
+/* product-add page end */
+.category-section input{
+  height: 45px;
+  border: 1px solid var(--primary-color);
+}
+.category-section textarea{
+  border: 1px solid var(--primary-color);
+}
+.category-btn{
+  height: 45px;
+  background: var(--primary-color); 
+  transition: all 0.3s;
+}
+.category-btn:hover{
+background: var(--primary-color);
+}
+
+/* subcategory-section start */
+.subcategory-section input{
+  height: 45px;
+  border: 1px solid var(--primary-color);
+}
+.subcategory-section textarea{
+  border: 1px solid var(--primary-color);
+}
+.subcategory-section select{
+  height: 45px;
+  border: 1px solid var(--primary-color);
+}
+.subcategory-btn{
+  height: 45px;
+  background: var(--primary-color) !important;
+}
+/* subcategory-section end */
+
+
+

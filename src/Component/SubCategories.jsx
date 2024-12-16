@@ -170,6 +170,7 @@
 import React, { useState } from "react";
 import DataTable from "react-data-table-component";
 import { FaTrash, FaEdit, FaEye, FaPlus } from "react-icons/fa"; // Added FaEye for the View button
+import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -316,9 +317,9 @@ export default function SubCategories() {
               />
             </div>
             <div className="subcategories-btn">
-              <button className="btn btn-primary">
+              <Link to="/add-sub-category" className="btn btn-primary">
                 <FaPlus /> Add New SubCategory
-              </button>
+              </Link>
             </div>
           </div>
 

@@ -1,7 +1,7 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
-import Sidebar from '../../Component/Sidebar';
-import Header from '../../Component/Header';
+import React from "react";
+import { Outlet } from "react-router-dom";
+import Sidebar from "../../Component/Sidebar";
+import Header from "../../Component/Header";
 
 export default function Layout() {
   return (
@@ -10,16 +10,17 @@ export default function Layout() {
         <div className="row">
           {/* Sidebar Section */}
           <div className="col-2 bg-dark text-white">
-            <Sidebar />
+            <div className="sidebar_wrapper">
+              <Sidebar />
+            </div>
           </div>
-          
+
           {/* Main Content Section */}
           <div className="col-12 col-sm-12 col-md-10">
-
             <div className="header-main bg-dark">
               <Header />
             </div>
-            
+
             {/* Dynamic Content Rendered via Routes */}
             <div className="content">
               <Outlet />

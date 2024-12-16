@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import DataTable from "react-data-table-component";
 import { FaTrash, FaEdit, FaPlus } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -195,9 +196,9 @@ export default function Categories() {
               />
             </div>
             <div className="categories-btn">
-            <button className="btn btn-primary">
+            <Link to="/categories/add-new-category" className="btn btn-primary">
               <FaPlus /> Add New Category
-            </button>
+            </Link>
             </div>
             
           </div>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import DataTable from "react-data-table-component";
 import { FaEye, FaEdit, FaTrashAlt } from "react-icons/fa"; // Import icons
+import { Link } from "react-router-dom";
 
 export default function Products() {
   const [data, setData] = useState([
@@ -161,9 +162,9 @@ export default function Products() {
           style={{ width: "300px" }}
         />
         {/* Add New Product Button */}
-        <a className="add-product-btn">
+        <Link to="add-new-product" className="add-product-btn">
           Add New Product
-        </a>
+        </Link>
       </div>
 
       {/* DataTable with filtered data */}

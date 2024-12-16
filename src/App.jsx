@@ -8,6 +8,10 @@ import Customer from './Component/Customer';
 import Categories from './Component/Categories';
 import Login from './Component/Login/login';
 import SubCategories from './Component/SubCategories';
+import AddNewProduct from './Component/Forms/AddNewProduct';
+import AddNewCategory from './Component/Forms/AddNewCategory';
+import AddSubCategory from './Component/Forms/AddSubCategory';
+
 
 function App() {
   return (
@@ -25,6 +29,12 @@ function App() {
           <Route path="customer" element={<Customer />} />
           <Route path="categories" element={<Categories />} />
           <Route path="sub-categories" element={<SubCategories/>} />
+          <Route path="products/add-new-product" element={<AddNewProduct/>} />
+          <Route path="categories/add-new-category" element={<AddNewCategory/>} />
+          <Route path="add-sub-category" element={<AddSubCategory/>} />
+
+          
+          {/* <Route path="add-new-product" element={<AddNewProduct/>} /> */}
         </Route>
       </Routes>
     </Router>
