@@ -9,7 +9,7 @@ export default function Layout() {
       <div className="container-fluid">
         <div className="row">
           {/* Sidebar Section */}
-          <div className="col-2 bg-dark text-white">
+          <div className="col-2 text-white p-0">
             <div className="sidebar_wrapper">
               <Sidebar />
             </div>
