@@ -69,7 +69,9 @@ export default function AddNewCategory() {
   return (
     <div className="category-section">
       <div className="container mt-5">
-        <h2 className="mb-4">Add New Category</h2>
+      <div className="page-tittle">
+      <h4 className="mb-4">Add New Category</h4>
+      </div>
         <form id="addCategoryForm" onSubmit={(e) => e.preventDefault()}>
           {/* Name Field */}
           <div className="mb-3">

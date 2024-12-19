@@ -124,7 +124,10 @@ export default function AddNewProduct() {
   return (
     <div className="add-product-section">
       <div className="container my-5">
-        <h2>Add New Product</h2>
+
+      <div className="page-tittle">
+      <h4 className="mb-4">Add New Product</h4>
+      </div>
         <form id="addProductForm" onSubmit={handleSubmit}>
           {/* Product Title */}
           <div className="mb-3">

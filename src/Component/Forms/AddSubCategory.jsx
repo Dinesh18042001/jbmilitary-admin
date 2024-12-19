@@ -85,7 +85,9 @@ export default function AddSubCategory() {
   return (
     <div className="subcategory-section">
       <div className="container mt-5">
-        <h2 className="mb-4">Add New Subcategory</h2>
+      <div className="page-tittle">
+      <h4 className="mb-4">Add New Subcategory</h4>
+      </div>
         <form id="addSubCategoryForm" onSubmit={(e) => e.preventDefault()}>
           {/* Subcategory Name Field */}
           <div className="mb-3">

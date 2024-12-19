@@ -69,8 +69,6 @@
 //   );
 // }
 
-
-
 // import React, { useState } from "react";
 // import { Link } from "react-router-dom";
 
@@ -152,31 +150,46 @@
 //   );
 // }
 
-
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Sidebar() {
   // State for toggling dropdown
-  const [isManagementDropdownOpen, setIsManagementDropdownOpen] = useState(false);
+  const [isManagementDropdownOpen, setIsManagementDropdownOpen] =
+    useState(false);
 
   // Sidebar links data
   const sidebarLinks = [
     { icon: "assets/sidebar-icon/menu.png", text: "Dashboard", path: "/" },
-    { icon: "assets/sidebar-icon/documents.png", text: "Products", path: "products" },
+    {
+      icon: "assets/sidebar-icon/documents.png",
+      text: "Products",
+      path: "products",
+    },
     { icon: "assets/sidebar-icon/order.png", text: "Orders", path: "orders" },
-    { icon: "assets/sidebar-icon/man-avatar.png", text: "Customer", path: "customer" },
-    { icon: "assets/sidebar-icon/list.png", text: "Categories", path: "categories" },
-    { icon: "assets/sidebar-icon/classification.png", text: "Sub Categories", path: "sub-categories" },
-    { icon: "assets/sidebar-icon/auction.png", text: "Auctions", path: "#"},
+    {
+      icon: "assets/sidebar-icon/man-avatar.png",
+      text: "Customer",
+      path: "customer",
+    },
+    {
+      icon: "assets/sidebar-icon/list.png",
+      text: "Categories",
+      path: "categories",
+    },
+    {
+      icon: "assets/sidebar-icon/classification.png",
+      text: "Sub Categories",
+      path: "sub-categories",
+    },
+    { icon: "assets/sidebar-icon/auction.png", text: "Auctions", path: "auctions" },
   ];
 
   // Management dropdown items
   const managementDropdownLinks = [
-    { text: "About", path: "#" },
-    { text: "Auctions", path: "#" },
-    { text: "Selling", path: "#" },
+    { icon: "assets/sidebar-icon/information.png", text: "About", path: "#" },
+    { icon: "assets/sidebar-icon/auction2.png", text: "Auctions", path: "#" },
+    { icon: "assets/sidebar-icon/salary.png", text: "Selling", path: "#" },
   ];
 
   return (
@@ -208,18 +221,25 @@ export default function Sidebar() {
         <div className="sidebar-link ms-3">
           <div
             className="sidebar-link-main d-flex align-items-center justify-content-between"
-            onClick={() => setIsManagementDropdownOpen(!isManagementDropdownOpen)}
+            onClick={() =>
+              setIsManagementDropdownOpen(!isManagementDropdownOpen)
+            }
             style={{ cursor: "pointer" }}
           >
             <div className="d-flex align-items-center">
               <span>
-                <img src="assets/sidebar-icon/management.png" alt="Management" />
+                <img
+                  src="assets/sidebar-icon/management.png"
+                  alt="Management"
+                />
               </span>
               <p className="ms-2 m-0">Management</p>
             </div>
             {/* Dropdown Icon */}
             <span
-              className={`dropdown-icon ms-1 ${isManagementDropdownOpen ? "rotate" : ""}`} // Adjusted margin
+              className={`dropdown-icon ms-1 ${
+                isManagementDropdownOpen ? "rotate" : ""
+              }`} // Adjusted margin
             >
               <i className="fas fa-caret-down"></i>
             </span>
@@ -230,8 +250,14 @@ export default function Sidebar() {
                 <Link
                   to={item.path}
                   key={idx}
-                  className="text-decoration-none text-white d-block mb-2"
+                  className="text-decoration-none text-white d-flex align-items-center mb-2"
                 >
+                  <img
+                    src={item.icon}
+                    alt={item.text}
+                    className="me-2"
+                    style={{ width: "20px" }}
+                  />
                   {item.text}
                 </Link>
               ))}

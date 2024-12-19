@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import DataTable from "react-data-table-component";
-import { FaTrash, FaEye } from "react-icons/fa"; // Importing delete and view icons
+import { FaTrash, FaEye } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Customer() {
   const [customers, setCustomers] = useState([
@@ -109,16 +111,19 @@ export default function Customer() {
     );
   });
 
-  const handleDelete = (id) => {
-    if (window.confirm("Are you sure you want to delete this customer?")) {
-      setCustomers(customers.filter((customer) => customer.id !== id));
-    }
-  };
-
-  const handleView = (customer) => {
-    alert(
-      `Viewing customer details:\nName: ${customer.name}\nEmail: ${customer.email}\nPhone: ${customer.phone}`
-    );
+  const handleDelete = (id, name) => {
+    setCustomers(customers.filter((customer) => customer.id !== id));
+    toast.error(`${name} has been deleted.`, {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      icon: "❌",
+    });
   };
 
   const columns = [
@@ -126,6 +131,7 @@ export default function Customer() {
       name: "ID",
       selector: (row) => row.id,
       sortable: true,
+      width: "70px",
     },
     {
       name: "Joining Date",
@@ -149,12 +155,12 @@ export default function Customer() {
       name: "Actions",
       cell: (row) => (
         <div>
-          <button className="btn btn-info me-2" onClick={() => handleView(row)}>
+          <button className="btn btn-info me-2">
             <FaEye />
           </button>
           <button
             className="btn btn-danger"
-            onClick={() => handleDelete(row.id)}
+            onClick={() => handleDelete(row.id, row.name)}
           >
             <FaTrash />
           </button>
@@ -185,7 +191,11 @@ export default function Customer() {
   return (
     <div className="customer-section">
       <div className="container mt-4">
-        <h4 className="mb-4">Customer Management</h4>
+        
+      <div className="page-tittle">
+      <h4 className="mb-4">Customer</h4>
+      </div>
+        
 
         <div className="row mb-4">
           <div className="col-md-4">
@@ -229,6 +239,7 @@ export default function Customer() {
           responsive
           customStyles={customStyles}
         />
+        <ToastContainer />
       </div>
     </div>
   );

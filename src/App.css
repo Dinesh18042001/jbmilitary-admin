@@ -784,3 +784,76 @@ input:checked+.slider:before {
 /* subcategory-section end */
 
 
+/* Auctions page start */
+.auction-section input{
+  height: 40px !important;
+  border: 1px solid var(--primary-color);
+}
+.auction-section .add-auction-btn a{
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  transition: all 0.5s;
+}
+.auction-section .add-auction-btn a:hover{
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+.view-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #007bff; 
+  border: none;
+  border-radius: 8px; 
+  cursor: pointer;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.view-button:hover {
+  background-color: #0056b3; 
+}
+
+
+.text-success {
+  color: #28a745 !important; 
+}
+
+.text-primary {
+  color: #007bff !important; 
+}
+
+.font-weight-bold {
+  font-weight: bold;
+}
+.edit-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #28a745; 
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.edit-button:hover {
+  background-color: #1e7e34; 
+}
+
+.text-success {
+  color: #28a745 !important;
+}
+
+.page-tittle h4{
+  font-weight: 500;
+  font-size: 22px !important;
+}
+
+/* Auctions page start */

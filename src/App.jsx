@@ -11,6 +11,8 @@ import SubCategories from './Component/SubCategories';
 import AddNewProduct from './Component/Forms/AddNewProduct';
 import AddNewCategory from './Component/Forms/AddNewCategory';
 import AddSubCategory from './Component/Forms/AddSubCategory';
+import AuctionsPage from './Component/Auctions/AuctionsPage';
+import AddNewAuction from './Component/Forms/AddNewAuction';
 
 
 function App() {
@@ -32,6 +34,9 @@ function App() {
           <Route path="products/add-new-product" element={<AddNewProduct/>} />
           <Route path="categories/add-new-category" element={<AddNewCategory/>} />
           <Route path="add-sub-category" element={<AddSubCategory/>} />
+          <Route path="auctions" element={<AuctionsPage/>} />
+          <Route path="add-new-auction" element={<AddNewAuction/>} />
+
 
           
           {/* <Route path="add-new-product" element={<AddNewProduct/>} /> */}

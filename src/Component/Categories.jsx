@@ -117,6 +117,7 @@ export default function Categories() {
       selector: (row) => row.id,
       sortable: true,
       center: false,
+      width: "70px",
     },
     {
       name: "Name",
@@ -182,7 +183,10 @@ export default function Categories() {
     <>
       <div className="categories-section">
         <div className="container mt-4">
-          <h4 className="mb-4 fs-1">Manage Categories</h4>
+          
+          <div className="page-tittle">
+            <h4 className="mb-4">Categories</h4>
+          </div>
 
           <div className="d-flex justify-content-between mb-3">
             <div className="d-flex align-items-center">
@@ -196,11 +200,13 @@ export default function Categories() {
               />
             </div>
             <div className="categories-btn">
-            <Link to="/categories/add-new-category" className="btn btn-primary">
-              <FaPlus /> Add New Category
-            </Link>
+              <Link
+                to="/categories/add-new-category"
+                className="btn btn-primary"
+              >
+                <FaPlus /> Add New Category
+              </Link>
             </div>
-            
           </div>
 
           <DataTable

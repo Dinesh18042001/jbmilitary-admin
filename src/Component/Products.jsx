@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import DataTable from "react-data-table-component";
 import { FaEye, FaEdit, FaTrashAlt } from "react-icons/fa"; // Import icons
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // Import Toastify styles
 
 export default function Products() {
   const [data, setData] = useState([
@@ -31,6 +33,22 @@ export default function Products() {
     product.category.toLowerCase().includes(search.toLowerCase()) ||
     product.sku.toLowerCase().includes(search.toLowerCase())
   );
+
+  const handleDelete = (id, name) => {
+    setData(data.filter((product) => product.id !== id));
+    toast.error(`${name} has been deleted.`, {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      icon: "❌",
+    });
+  };
+  
 
   const columns = [
     {
@@ -89,7 +107,6 @@ export default function Products() {
       name: "Actions",
       cell: (row) => (
         <div style={{ display: "flex", justifyContent: "center", gap: "15px", alignItems: "center" }}>
-          {/* View Icon */}
           <FaEye
             style={{
               color: "#007bff",
@@ -98,7 +115,6 @@ export default function Products() {
             }}
             onClick={() => alert(`Viewing product: ${row.name}`)}
           />
-          {/* Edit Icon */}
           <FaEdit
             style={{
               color: "#ffc107",
@@ -107,29 +123,22 @@ export default function Products() {
             }}
             onClick={() => alert(`Editing product: ${row.name}`)}
           />
-          {/* Delete Icon */}
           <FaTrashAlt
             style={{
               color: "#dc3545",
               fontSize: "20px",
               cursor: "pointer",
             }}
-            onClick={() => handleDelete(row.id)}
+            onClick={() => handleDelete(row.id, row.name)}
           />
         </div>
       ),
       ignoreRowClick: true,
       allowOverflow: true,
       button: true,
-    },
-  ];
-
-  const handleDelete = (id) => {
-    if (window.confirm("Are you sure you want to delete this product?")) {
-      setData(data.filter((product) => product.id !== id));
-      alert(`Product with ID ${id} has been deleted.`);
     }
-  };
+    
+  ];
 
   const customStyles = {
     headCells: {
@@ -149,7 +158,10 @@ export default function Products() {
 
   return (
     <div className="container mt-4">
+      <div className="page-tittle">
       <h4 className="mb-4">Products Data Table</h4>
+      </div>
+      
 
       {/* Search Bar */}
       <div className="mb-4 d-flex justify-content-between align-items-center">
@@ -177,6 +189,9 @@ export default function Products() {
         responsive
         customStyles={customStyles}
       />
+
+      {/* Toast Container */}
+      <ToastContainer />
     </div>
   );
 }

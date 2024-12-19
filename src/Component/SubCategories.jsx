@@ -7,18 +7,90 @@ import "react-toastify/dist/ReactToastify.css";
 
 export default function SubCategories() {
   const [subCategories, setSubCategories] = useState([
-    { id: 1, categoryName: "Smartphones", description: "Mobile phones and accessories", parentCategory: "Electronics", published: true },
-    { id: 2, categoryName: "Men's Clothing", description: "Apparel for men", parentCategory: "Fashion", published: false },
-    { id: 3, categoryName: "Kitchen Appliances", description: "Cooking and kitchen tools", parentCategory: "Home & Kitchen", published: true },
-    { id: 4, categoryName: "Fiction Books", description: "Novels and fiction", parentCategory: "Books", published: false },
-    { id: 5, categoryName: "Outdoor Sports", description: "Equipment for outdoor activities", parentCategory: "Sports & Outdoors", published: true },
-    { id: 6, categoryName: "Gaming Consoles", description: "Video gaming consoles and accessories", parentCategory: "Electronics", published: true },
-    { id: 7, categoryName: "Women's Footwear", description: "Shoes, sandals, and heels for women", parentCategory: "Fashion", published: true },
-    { id: 8, categoryName: "Baby Care", description: "Products for infants and toddlers", parentCategory: "Kids & Baby", published: false },
-    { id: 9, categoryName: "Fitness Equipment", description: "Gym and workout gear", parentCategory: "Sports & Outdoors", published: true },
-    { id: 10, categoryName: "Home Decor", description: "Decorative items for home", parentCategory: "Home & Kitchen", published: false },
-    { id: 11, categoryName: "Non-Fiction Books", description: "Biographies, self-help, and educational books", parentCategory: "Books", published: true },
-    { id: 12, categoryName: "Cameras & Photography", description: "Cameras, lenses, and accessories", parentCategory: "Electronics", published: false },
+    {
+      id: 1,
+      categoryName: "Smartphones",
+      description: "Mobile phones and accessories",
+      parentCategory: "Electronics",
+      published: true,
+    },
+    {
+      id: 2,
+      categoryName: "Men's Clothing",
+      description: "Apparel for men",
+      parentCategory: "Fashion",
+      published: false,
+    },
+    {
+      id: 3,
+      categoryName: "Kitchen Appliances",
+      description: "Cooking and kitchen tools",
+      parentCategory: "Home & Kitchen",
+      published: true,
+    },
+    {
+      id: 4,
+      categoryName: "Fiction Books",
+      description: "Novels and fiction",
+      parentCategory: "Books",
+      published: false,
+    },
+    {
+      id: 5,
+      categoryName: "Outdoor Sports",
+      description: "Equipment for outdoor activities",
+      parentCategory: "Sports & Outdoors",
+      published: true,
+    },
+    {
+      id: 6,
+      categoryName: "Gaming Consoles",
+      description: "Video gaming consoles and accessories",
+      parentCategory: "Electronics",
+      published: true,
+    },
+    {
+      id: 7,
+      categoryName: "Women's Footwear",
+      description: "Shoes, sandals, and heels for women",
+      parentCategory: "Fashion",
+      published: true,
+    },
+    {
+      id: 8,
+      categoryName: "Baby Care",
+      description: "Products for infants and toddlers",
+      parentCategory: "Kids & Baby",
+      published: false,
+    },
+    {
+      id: 9,
+      categoryName: "Fitness Equipment",
+      description: "Gym and workout gear",
+      parentCategory: "Sports & Outdoors",
+      published: true,
+    },
+    {
+      id: 10,
+      categoryName: "Home Decor",
+      description: "Decorative items for home",
+      parentCategory: "Home & Kitchen",
+      published: false,
+    },
+    {
+      id: 11,
+      categoryName: "Non-Fiction Books",
+      description: "Biographies, self-help, and educational books",
+      parentCategory: "Books",
+      published: true,
+    },
+    {
+      id: 12,
+      categoryName: "Cameras & Photography",
+      description: "Cameras, lenses, and accessories",
+      parentCategory: "Electronics",
+      published: false,
+    },
   ]);
 
   const [filter, setFilter] = useState("");
@@ -32,7 +104,9 @@ export default function SubCategories() {
       )
     );
 
-    const updatedSubCategory = subCategories.find((subCategory) => subCategory.id === id);
+    const updatedSubCategory = subCategories.find(
+      (subCategory) => subCategory.id === id
+    );
 
     if (updatedSubCategory.published) {
       toast.info(`SubCategory is unpublished!`);
@@ -104,7 +178,11 @@ export default function SubCategories() {
           <button className="btn btn-primary" title="View">
             <FaEye />
           </button>
-          <button className="btn btn-danger" title="Delete" onClick={() => handleDelete(row)}>
+          <button
+            className="btn btn-danger"
+            title="Delete"
+            onClick={() => handleDelete(row)}
+          >
             <FaTrash />
           </button>
         </div>
@@ -135,7 +213,10 @@ export default function SubCategories() {
     <>
       <div className="subcategories-section">
         <div className="container mt-4">
-          <h4 className="mb-4 fs-1">Manage SubCategories</h4>
+          
+          <div className="page-tittle">
+            <h4 className="mb-4">SubCategories</h4>
+          </div>
 
           <div className="d-flex justify-content-between mb-3">
             <div className="d-flex align-items-center">

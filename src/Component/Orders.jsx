@@ -210,7 +210,10 @@ export default function Orders() {
   return (
     <div className="order-section">
       <div className="container mt-4">
-        <h4 className="mb-4">Orders</h4>
+      <div className="page-tittle">
+      <h4 className="mb-4">Orders</h4>
+      </div>
+        
 
         {/* Filter Inputs */}
         <div className="row mb-4">
