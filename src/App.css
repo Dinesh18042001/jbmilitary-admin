@@ -857,3 +857,17 @@ input:checked+.slider:before {
 }
 
 /* Auctions page start */
+
+/* add-auction-section start */
+.add-auction-section input{
+  height: 45px;
+  border: 1px solid var(--primary-color);
+}
+.add-auction-section select{
+  height: 45px;
+  border: 1px solid var(--primary-color);
+}
+.add-auction-section textarea{
+  border: 1px solid var(--primary-color);
+}
+/* add-auction-section end */
