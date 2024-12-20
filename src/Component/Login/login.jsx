@@ -139,7 +139,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function Login() {
-  const predefinedEmail = "hello@123.com";
+  const predefinedEmail = "hello@123gmail.com";
   const predefinedPassword = "hello@123";
 
   const navigate = useNavigate();
